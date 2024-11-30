@@ -1,7 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
 #include <vector>
+#include <cmath>
 
 using std::vector;
 
@@ -41,7 +43,7 @@ namespace Matrices {
 
     class TransformationMatrix : public Matrix {
         public:
-            TransformationMatrix(double x_shift, double y_shift);
+            TransformationMatrix(double x_shift, double y_shift, int cols);
     };
 
     Matrix operator+(const Matrix& a, const Matrix& b);

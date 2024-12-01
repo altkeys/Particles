@@ -41,9 +41,9 @@ namespace Matrices {
             ScalingMatrix(double scalar);
     };
 
-    class TransformationMatrix : public Matrix {
+    class TranslationMatrix : public Matrix {
         public:
-            TransformationMatrix(double x_shift, double y_shift, int cols);
+            TranslationMatrix(double x_shift, double y_shift, int cols);
     };
 
     Matrix operator+(const Matrix& a, const Matrix& b);

@@ -26,7 +26,7 @@ namespace Matrices {
         (*this)(1, 1) = scalar;
     }
 
-    TransformationMatrix::TransformationMatrix(double x_shift, double y_shift, int cols)
+    TranslationMatrix::TranslationMatrix(double x_shift, double y_shift, int cols)
     : Matrix(2, cols) {
         for (int i = 0; i < cols; i++) {
             (*this)(0, i) = x_shift;

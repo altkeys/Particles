@@ -10,6 +10,7 @@ class Engine {
 
     private:
         vector<Particle> m_particles;
+        sf::RenderWindow m_window;
 
         void draw();
         void input();

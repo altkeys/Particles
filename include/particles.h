@@ -1,11 +1,13 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <cstdlib> // Needed for srand() and rand()
+#include <ctime>
 #include "./matrices.h"
 
 const float GRAVITY = 10.0,
             TTL     = 5.0,  // Time To Live
-            SCALE   = 0.999;
+            SCALAR   = 0.999;
 
 
 class Particle : sf::Drawable {
@@ -21,6 +23,7 @@ class Particle : sf::Drawable {
 
     private:
         float m_ttl, m_radians_per_sec, m_vx, m_vy;
+        sf::Vector2f m_center_coordinate;
         int m_num_points;
         sf::View m_cartesian_plane;
         sf::Color m_cPrimary, m_cSecondary;

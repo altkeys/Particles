@@ -48,7 +48,6 @@ void Engine::input() {
             case sf::Event::MouseButtonPressed:
                 if (event.mouseButton.button == sf::Mouse::Left) {
                     for (int i = 0; i < 5; i++) {
-                        std::cout << i << std::endl;
                         int num_points = 25 + (rand() % 26);
 
                         sf::Vector2i location = { event.mouseButton.x, event.mouseButton.y };

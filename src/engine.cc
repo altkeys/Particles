@@ -66,7 +66,6 @@ void Engine::input() {
 
 void Engine::update(float dt_as_seconds) {
     for (auto iter = m_particles.begin(); iter != m_particles.end();) {
-        std::cout << "x ";
         if (iter->get_ttl() > 0.0) {
             iter->update(dt_as_seconds);
             iter++;

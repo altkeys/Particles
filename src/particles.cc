@@ -2,9 +2,10 @@
 #include <math.h>
 
 Particle::Particle(sf::RenderTarget& target, int num_points, sf::Vector2i position)
-: m_matrix(2, num_points), m_ttl(TTL), m_num_points(num_points) {
-    srand(time(0));
+: m_matrix(2, num_points) {
 
+    m_ttl = TTL;
+    m_num_points = num_points;
     m_radians_per_sec = static_cast<float>(rand()) / (RAND_MAX);
     m_radians_per_sec *= M_PI;
     m_cartesian_plane.setCenter(0.0, 0.0);
@@ -27,7 +28,7 @@ Particle::Particle(sf::RenderTarget& target, int num_points, sf::Vector2i positi
 
     for (int j = 0; j < num_points; j++) {
         /* 61 comes from (80 - 20 + 1) to generate a number in the range [20, 80] */
-        float r = 20 + rand() % 61,
+        float r = 20 + (rand() % 61),
               dx = r * std::cos(theta),
               dy = r * std::sin(theta);
 

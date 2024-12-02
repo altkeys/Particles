@@ -15,6 +15,10 @@ Particle::Particle(sf::RenderTarget& target, int num_points, sf::Vector2i positi
     m_vx = 100 + (rand() % 401);
     m_vy = 100 + (rand() % 401);
 
+    if (rand() % 2 != 0) {
+        m_vx *= -1;
+    }
+
     m_cPrimary = sf::Color::White;
     m_cSecondary = sf::Color(rand() % 256, rand() % 256, rand() % 256);
 
@@ -59,8 +63,10 @@ void Particle::update(float dt) {
     rotate(dt * m_radians_per_sec);
     scale(SCALAR);
 
+    m_vy -= GRAVITY * dt;
+
     float dx = m_vx * dt,
-          dy = (m_vy - (GRAVITY * dt)) * dt;
+          dy = m_vy * dt;
 
     translate(dx, dy);
 }

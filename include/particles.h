@@ -5,12 +5,12 @@
 #include <ctime>
 #include "./matrices.h"
 
-const float GRAVITY = 10.0,
+const float GRAVITY = 1000,
             TTL     = 5.0,  // Time To Live
             SCALAR   = 0.999;
 
 
-class Particle : sf::Drawable {
+class Particle : public sf::Drawable {
     public:
         Particle(sf::RenderTarget& target, int num_points, sf::Vector2i position);
 
